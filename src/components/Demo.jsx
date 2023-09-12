@@ -44,6 +44,11 @@ const Demo = () => {
       localStorage.setItem("articles", JSON.stringify(updatedAllArticles));
     }
   };
+  const handleCopy = (copyUrl) => {
+    setCopied(copyUrl);
+    navigator.clipboard.writeText(copyUrl);
+    setTimeout(() => setCopied(false), 3000);
+  };
   return (
     <section className="w-full flex flex-col mt-16 max-w-xl">
       <div className="flex flex-col w-full gap-2">
